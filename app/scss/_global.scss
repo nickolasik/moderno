@@ -27,7 +27,31 @@ body{
     font-size: 15px;
     line-height: 24px;
     color: $text;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+.search{
+    &.page-search{
+        min-height: 228px;
+        .search__inner{
+            padding: 62px 0px 69px;
+        }
+        .search__inner-text{
+            margin-bottom: 24px;
+        }
+    }
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.content{
+    flex: 1 0 auto;
+    // min-height: 500px;
+    // background-color: $grey;
+}
+.footer{
+    flex: 0 0 auto;
 }
 .container{
     max-width: 1200px;
@@ -47,7 +71,6 @@ body{
 .title{
     color: $bg;
     @include f700;
-    font-weight: 700;
     line-height: 60px;
     font-size: 36px;
     text-align: center;
@@ -56,6 +79,35 @@ body{
 .rate-star{
     display: inline-block;
     margin-right: 13px;
+}
+.breadcrumbs{
+    &__inner{
+        padding: 45px 0px 40px;
+    }
+    &__list{
+        li{
+            display: inline-block;
+            position: relative;
+            & + li{
+                padding-left: 24px;
+                &::before{
+                    content: '-';
+                    position: absolute;
+                    left: 8px;
+                    color: $green;
+                }
+            }
+            &:last-child{
+                a,
+                span{
+                    color: $bg;
+                }
+            }
+        }
+        a{
+            color: #b0bec5;
+        }
+    }
 }
 .angle-right{
     position: relative;
@@ -68,8 +120,4 @@ body{
         color: $green;
         font-size: 14px;
     }
-}
-.content{
-    min-height: 500px;
-    background-color: $grey;
 }
