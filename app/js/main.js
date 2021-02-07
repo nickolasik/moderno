@@ -25,6 +25,9 @@ $(function(){
         return false;
     });
 
+    $('input[type="file"], select').styler();
+    // $('input[type="file"]').styler('destroy');
+
 
 
 
